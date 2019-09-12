@@ -1,6 +1,8 @@
+import java.lang.reflect.Array;
 import java.util.*;
 
 import static java.lang.Double.NaN;
+import static java.lang.Double.doubleToLongBits;
 import static java.lang.Math.pow;
 import static java.lang.Math.toIntExact;
 
@@ -28,8 +30,23 @@ public class Calculator {
 
     // ------  Evaluate RPN expression -------------------
 
-    public double evalPostfix(List<String> postfix) {
-        return 0;  // TODO
+    public double evalPostfix(List<String> postfix)  //TODO add pow
+    {
+        Stack<Double> stack = new Stack<Double>();
+        for(int i = 0; i < postfix.size(); i++)
+        {
+            try {
+                double nmb = Double.parseDouble(postfix.get(i));
+                stack.add(nmb);
+            } catch(Exception e)
+            {
+                double a = stack.pop();
+                double b = stack.pop();
+
+                stack.push(applyOperator(postfix.get(i), a, b));
+            }
+        }
+        return stack.pop();
     }
 
 
@@ -65,18 +82,34 @@ public class Calculator {
                 postfix.add(tokens.get(i));
             } catch(Exception e)
             {
-                if (tokens.get(i) == ")") // pops elements inside parenthesis to prefix;
+                //System.out.println("debug: " + tokens.get(i));
+
+                if (tokens.get(i) == "(") {
+                    System.out.println("debug: added [(] to stack");
+                    stack.push(tokens.get(i));
+                }
+                else if (tokens.get(i) == ")") // pops elements inside parenthesis to prefix;
                 {
                     while (stack.peek() != "(")
                     {
+                        if(stack.size() == 0) throw new RuntimeException(MISSING_OPERATOR);
                         postfix.add(stack.pop());
                     }
                     stack.pop();
                 } else {
-                    while (getPrecedence(stack.peek()) >= getPrecedence(tokens.get(i))) //check if procedure in stack has higher value than current procedure
+                    if (stack.size() != 0)
+                        System.out.println("debug: "+stack.peek());
+                    System.out.println("debug: "+ tokens.get(i));
+                    if (tokens.get(i) != "(")
+                    {
+                        System.out.println("debug: ["+ tokens.get(i) + "] != [(]" );
+                    }
+                    while (stack.size() != 0 && stack.peek() != "(" &&  getPrecedence(stack.peek()) >= getPrecedence(tokens.get(i)))
+                        //check if procedure in stack has higher value than current procedure
                     {
                         postfix.add(stack.pop());
                     }
+                    System.out.println("debug: added [" + tokens.get(i) + "] to stack");
                     stack.push(tokens.get(i));
                 }
             }
@@ -93,7 +126,7 @@ public class Calculator {
         } else if ("^".contains(op)) {
             return 4;
         } else {
-            throw new RuntimeException(OP_NOT_FOUND);
+            throw new RuntimeException(OP_NOT_FOUND + " : [" + op + "]");
         }
     }
 
@@ -117,7 +150,34 @@ public class Calculator {
     public List<String> tokenize(String expr)
     {
         //break string up into tokens: number, operand or parenthesis
-        return null;   // TODO
+        List<String> list = new ArrayList<String>();
+        String[] in = expr.split("");
+        for (int i = 0; i < in.length; i++)
+        {
+            if(!Character.isWhitespace(in[i].charAt(0)))
+            {
+                try {
+                    int test = Integer.parseInt(in[i]);
+                    String c = in[i];
+                    int n = i + 1;
+                    while (true) {
+                        try {
+                            int test2 = Integer.parseInt(in[n]);
+                            c += in[n];
+                            n++;
+                        } catch (Exception e) {
+                            break;
+                        }
+                    }
+                    i = n-1;
+                    list.add(c);
+                } catch (Exception e)
+                {
+                    list.add(in[i]);
+                }
+            } else System.out.println("debug: found space at " + i);
+        }
+        return list;
     }
 
     // TODO Possibly more methods

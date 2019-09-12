@@ -9,6 +9,7 @@ public class GUI extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-
+       /* Test test = new Test();
+        test.TestInfix2Postfix();*/
     }
 }
