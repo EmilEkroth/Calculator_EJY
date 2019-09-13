@@ -28,6 +28,15 @@ public class Calculator {
         return evalPostfix(postfix);
     }
 
+    public double Calc (String input)
+    {
+        String equ = "("+input+")";
+        List<String> tokens = tokenize(equ);
+        List<String> postfix = infix2Postfix(tokens);
+        double out = evalPostfix(postfix);
+        return out;
+    }
+
     // ------  Evaluate RPN expression -------------------
 
     public double evalPostfix(List<String> postfix)  //TODO add pow
@@ -85,7 +94,6 @@ public class Calculator {
                 //System.out.println("debug: " + tokens.get(i));
 
                 if (tokens.get(i).equals("(")) {
-                    System.out.println("debug: added [(] to stack");
                     stack.push(tokens.get(i));
                 }
                 else if (tokens.get(i).equals(")")) // pops elements inside parenthesis to prefix;
@@ -97,15 +105,11 @@ public class Calculator {
                     }
                     stack.pop();
                 } else {
-                    if (stack.size() != 0)
-                        System.out.println("debug: "+stack.peek());
-                    System.out.println("debug: "+ tokens.get(i));
-                    while (stack.size() != 0 && stack.peek() != "(" &&  getPrecedence(stack.peek()) >= getPrecedence(tokens.get(i)))
+                    while (stack.size() != 0 && !stack.peek().equals("(") &&  getPrecedence(stack.peek()) >= getPrecedence(tokens.get(i)))
                         //check if procedure in stack has higher value than current procedure
                     {
                         postfix.add(stack.pop());
                     }
-                    System.out.println("debug: added [" + tokens.get(i) + "] to stack");
                     stack.push(tokens.get(i));
                 }
             }
@@ -171,7 +175,7 @@ public class Calculator {
                 {
                     list.add(in[i]);
                 }
-            } else System.out.println("debug: found space at " + i);
+            }
         }
         return list;
     }
