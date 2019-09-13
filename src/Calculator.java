@@ -39,7 +39,7 @@ public class Calculator {
 
     // ------  Evaluate RPN expression -------------------
 
-    public double evalPostfix(List<String> postfix)  //TODO add pow
+    public double evalPostfix(List<String> postfix)
     {
         Stack<Double> stack = new Stack<Double>();
         for(int i = 0; i < postfix.size(); i++)
@@ -129,9 +129,9 @@ public class Calculator {
             throw new RuntimeException(OP_NOT_FOUND + " : [" + op + "]");
         }
     }
-
+    /*
     Assoc getAssociativity(String op) {
-        if ("+-*/".contains(op)) {
+        if ("+-/*".contains(op)) {
             return Assoc.LEFT;
         } else if ("^".contains(op)) {
             return Assoc.RIGHT;
@@ -144,7 +144,7 @@ public class Calculator {
         LEFT,
         RIGHT
     }
-
+*/
     // ---------- Tokenize -----------------------
 
     public List<String> tokenize(String expr)
