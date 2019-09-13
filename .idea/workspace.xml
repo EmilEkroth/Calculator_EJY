@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f294400f-2134-4bd4-bc4c-b72c66f2e453" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator_EJY/Calculator$Assoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Calculator_EJY/Calculator$Assoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator_EJY/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Calculator_EJY/Calculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator_EJY/REPL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Calculator_EJY/REPL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator_EJY/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Calculator_EJY/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/REPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/REPL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +89,13 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1568323780348</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="calculator stuff">
+      <created>1568378471255</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1568378471255</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
