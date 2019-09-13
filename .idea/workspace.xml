@@ -27,7 +27,7 @@
   <component name="ProjectId" id="1Qetqa71q7dikJc5fSRXNx4uEQp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../calculator" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -103,5 +103,21 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="calculator stuff" />
     <option name="LAST_COMMIT_MESSAGE" value="calculator stuff" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Calculator.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="tokens.get(i)" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

@@ -84,13 +84,13 @@ public class Calculator {
             {
                 //System.out.println("debug: " + tokens.get(i));
 
-                if (tokens.get(i) == "(") {
+                if (tokens.get(i).equals("(")) {
                     System.out.println("debug: added [(] to stack");
                     stack.push(tokens.get(i));
                 }
-                else if (tokens.get(i) == ")") // pops elements inside parenthesis to prefix;
+                else if (tokens.get(i).equals(")")) // pops elements inside parenthesis to prefix;
                 {
-                    while (stack.peek() != "(")
+                    while (!stack.peek().equals("("))
                     {
                         if(stack.size() == 0) throw new RuntimeException(MISSING_OPERATOR);
                         postfix.add(stack.pop());
@@ -100,10 +100,6 @@ public class Calculator {
                     if (stack.size() != 0)
                         System.out.println("debug: "+stack.peek());
                     System.out.println("debug: "+ tokens.get(i));
-                    if (tokens.get(i) != "(")
-                    {
-                        System.out.println("debug: ["+ tokens.get(i) + "] != [(]" );
-                    }
                     while (stack.size() != 0 && stack.peek() != "(" &&  getPrecedence(stack.peek()) >= getPrecedence(tokens.get(i)))
                         //check if procedure in stack has higher value than current procedure
                     {
