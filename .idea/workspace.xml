@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="f294400f-2134-4bd4-bc4c-b72c66f2e453" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="f294400f-2134-4bd4-bc4c-b72c66f2e453" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator_EJY/Calculator$Assoc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator_EJY/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Calculator_EJY/Calculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculator.java" afterDir="false" />
+    </list>
+>>>>>>> 5e75e20b07597f25826220aadf948f9225f28fc2
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +31,7 @@
   <component name="ProjectId" id="1Qetqa71q7dikJc5fSRXNx4uEQp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../calculator" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -40,9 +49,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Application.REPL">
     <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GUI" />
+      <module name="Calculator_EJY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="REPL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="REPL" />
       <module name="Calculator_EJY" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -57,6 +73,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.REPL" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.GUI" />
       </list>
@@ -80,10 +97,17 @@
       <updated>1568323780348</updated>
     </task>
     <task id="LOCAL−00002" summary="calculator stuff">
+<<<<<<< HEAD
       <created>1568330577206</created>
       <option name="number" value="LOCAL−00002" />
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1568330577206</updated>
+=======
+      <created>1568378471255</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1568378471255</updated>
+>>>>>>> 5e75e20b07597f25826220aadf948f9225f28fc2
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
@@ -104,5 +128,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="calculator stuff" />
     <option name="LAST_COMMIT_MESSAGE" value="calculator stuff" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="tokens.get(i)" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

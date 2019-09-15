@@ -28,9 +28,18 @@ public class Calculator {
         return evalPostfix(postfix);
     }
 
+    public double Calc (String input)
+    {
+        String equ = "("+input+")";
+        List<String> tokens = tokenize(equ);
+        List<String> postfix = infix2Postfix(tokens);
+        double out = evalPostfix(postfix);
+        return out;
+    }
+
     // ------  Evaluate RPN expression -------------------
 
-    public double evalPostfix(List<String> postfix)  //TODO add pow
+    public double evalPostfix(List<String> postfix)
     {
         Stack<Double> stack = new Stack<Double>();
         for(int i = 0; i < postfix.size(); i++)
@@ -84,32 +93,23 @@ public class Calculator {
             {
                 //System.out.println("debug: " + tokens.get(i));
 
-                if (tokens.get(i) == "(") {
-                    System.out.println("debug: added [(] to stack");
+                if (tokens.get(i).equals("(")) {
                     stack.push(tokens.get(i));
                 }
-                else if (tokens.get(i) == ")") // pops elements inside parenthesis to prefix;
+                else if (tokens.get(i).equals(")")) // pops elements inside parenthesis to prefix;
                 {
-                    while (stack.peek() != "(")
+                    while (!stack.peek().equals("("))
                     {
                         if(stack.size() == 0) throw new RuntimeException(MISSING_OPERATOR);
                         postfix.add(stack.pop());
                     }
                     stack.pop();
                 } else {
-                    if (stack.size() != 0)
-                        System.out.println("debug: "+stack.peek());
-                    System.out.println("debug: "+ tokens.get(i));
-                    if (tokens.get(i) != "(")
-                    {
-                        System.out.println("debug: ["+ tokens.get(i) + "] != [(]" );
-                    }
-                    while (stack.size() != 0 && stack.peek() != "(" &&  getPrecedence(stack.peek()) >= getPrecedence(tokens.get(i)))
+                    while (stack.size() != 0 && !stack.peek().equals("(") &&  getPrecedence(stack.peek()) >= getPrecedence(tokens.get(i)))
                         //check if procedure in stack has higher value than current procedure
                     {
                         postfix.add(stack.pop());
                     }
-                    System.out.println("debug: added [" + tokens.get(i) + "] to stack");
                     stack.push(tokens.get(i));
                 }
             }
@@ -129,9 +129,9 @@ public class Calculator {
             throw new RuntimeException(OP_NOT_FOUND + " : [" + op + "]");
         }
     }
-
+    /*
     Assoc getAssociativity(String op) {
-        if ("+-*/".contains(op)) {
+        if ("+-/*".contains(op)) {
             return Assoc.LEFT;
         } else if ("^".contains(op)) {
             return Assoc.RIGHT;
@@ -144,7 +144,7 @@ public class Calculator {
         LEFT,
         RIGHT
     }
-
+*/
     // ---------- Tokenize -----------------------
 
     public List<String> tokenize(String expr)
@@ -175,7 +175,7 @@ public class Calculator {
                 {
                     list.add(in[i]);
                 }
-            } else System.out.println("debug: found space at " + i);
+            }
         }
         return list;
     }

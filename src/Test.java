@@ -12,7 +12,7 @@ public class Test {
         test.TestCalc();
     }
     List<String> infix = Arrays.asList(new String[]{"(","3", "+", "2", "/", "3","*","(", "4", "+","5",")", "-", "6",")"});
-    String expression = "1+(4+1)";
+    String expression = "3*2+ 23 *(5/(3+2))";
 
     public void TestCalc ()
     {
@@ -22,5 +22,7 @@ public class Test {
         System.out.println(calc.evalPostfix(calc.infix2Postfix(infix)));*/
         System.out.println(calc.infix2Postfix(calc.tokenize(expression)));
         System.out.println(calc.evalPostfix(calc.infix2Postfix(calc.tokenize(expression))));
+
+        System.out.println(calc.Calc(expression));
     }
 }
