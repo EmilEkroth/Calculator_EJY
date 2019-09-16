@@ -3,8 +3,7 @@ import java.util.*;
 
 import static java.lang.Double.NaN;
 import static java.lang.Double.doubleToLongBits;
-import static java.lang.Math.pow;
-import static java.lang.Math.toIntExact;
+import static java.lang.Math.*;
 
 public class Calculator {
 
@@ -28,17 +27,29 @@ public class Calculator {
         return evalPostfix(postfix);
     }
 
+    public double Calc (String input)
+    {
+        String equ = "("+input+")";
+        List<String> tokens = tokenize(equ);
+        List<String> postfix = infix2Postfix(tokens);
+        double out = evalPostfix(postfix);
+        return out;
+    }
+
     // ------  Evaluate RPN expression -------------------
 
-    public double evalPostfix(List<String> postfix)  //TODO add pow
+    public double evalPostfix(List<String> postfix)
     {
         Stack<Double> stack = new Stack<Double>();
         for(int i = 0; i < postfix.size(); i++)
         {
-            try {
+            if(isNumber(postfix.get(i))) {
                 double nmb = Double.parseDouble(postfix.get(i));
                 stack.add(nmb);
-            } catch(Exception e)
+            }else if(postfix.get(i).equals("ln")){
+                double a = stack.pop();
+                stack.push(log(a));
+            } else
             {
                 double a = stack.pop();
                 double b = stack.pop();
@@ -77,15 +88,13 @@ public class Calculator {
         ArrayList<String> postfix = new ArrayList<String>();
         for (int i = 0; i < tokens.size(); i++)
         {
-            try {
-                int test = Integer.parseInt(tokens.get(i));
+            if(isNumber(tokens.get(i))) {
                 postfix.add(tokens.get(i));
-            } catch(Exception e)
+            } else
             {
                 //System.out.println("debug: " + tokens.get(i));
 
                 if (tokens.get(i).equals("(")) {
-                    System.out.println("debug: added [(] to stack");
                     stack.push(tokens.get(i));
                 }
                 else if (tokens.get(i).equals(")")) // pops elements inside parenthesis to prefix;
@@ -97,15 +106,11 @@ public class Calculator {
                     }
                     stack.pop();
                 } else {
-                    if (stack.size() != 0)
-                        System.out.println("debug: "+stack.peek());
-                    System.out.println("debug: "+ tokens.get(i));
-                    while (stack.size() != 0 && stack.peek() != "(" &&  getPrecedence(stack.peek()) >= getPrecedence(tokens.get(i)))
+                    while (stack.size() != 0 && !stack.peek().equals("(") &&  getPrecedence(stack.peek()) >= getPrecedence(tokens.get(i)))
                         //check if procedure in stack has higher value than current procedure
                     {
                         postfix.add(stack.pop());
                     }
-                    System.out.println("debug: added [" + tokens.get(i) + "] to stack");
                     stack.push(tokens.get(i));
                 }
             }
@@ -121,13 +126,15 @@ public class Calculator {
             return 3;
         } else if ("^".contains(op)) {
             return 4;
+        } else if ("ln".contains(op)){
+            return 5;
         } else {
             throw new RuntimeException(OP_NOT_FOUND + " : [" + op + "]");
         }
     }
-
+    /*
     Assoc getAssociativity(String op) {
-        if ("+-*/".contains(op)) {
+        if ("+-/*".contains(op)) {
             return Assoc.LEFT;
         } else if ("^".contains(op)) {
             return Assoc.RIGHT;
@@ -140,7 +147,7 @@ public class Calculator {
         LEFT,
         RIGHT
     }
-
+*/
     // ---------- Tokenize -----------------------
 
     public List<String> tokenize(String expr)
@@ -150,30 +157,44 @@ public class Calculator {
         String[] in = expr.split("");
         for (int i = 0; i < in.length; i++)
         {
-            if(!Character.isWhitespace(in[i].charAt(0)))
-            {
-                try {
-                    int test = Integer.parseInt(in[i]);
+            if(!in[i].equals(" "))
+                {
+                if(isNumber(in[i]))
+                {
                     String c = in[i];
                     int n = i + 1;
                     while (true) {
-                        try {
-                            int test2 = Integer.parseInt(in[n]);
+                        if(isNumber(in[n])) {
+
                             c += in[n];
                             n++;
-                        } catch (Exception e) {
+                        } else {
                             break;
                         }
                     }
                     i = n-1;
                     list.add(c);
-                } catch (Exception e)
+                } else if (in[i].equals("l")){
+                    list.add("ln");
+                    i++;
+                }else
                 {
                     list.add(in[i]);
                 }
-            } else System.out.println("debug: found space at " + i);
+            }
         }
         return list;
+    }
+
+    boolean isNumber (String string)
+    {
+        boolean r = false;
+        try {
+             Double.parseDouble(string);
+             r = true;
+        } catch (NumberFormatException nfe){}
+
+        return r;
     }
 
     // TODO Possibly more methods

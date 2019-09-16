@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="f294400f-2134-4bd4-bc4c-b72c66f2e453" name="Default Changelist" comment="calculator stuff">
+=======
+    <list default="true" id="8ffd7b05-7937-4e14-9787-3ef4dfbbf5e7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+>>>>>>> 53b1f1a6d2267f87d0082e27610a114187f7739f
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator_EJY/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Calculator_EJY/Calculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator_EJY/REPL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Calculator_EJY/REPL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator_EJY/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Calculator_EJY/Test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/REPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/REPL.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,25 +21,12 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaFXApplication" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1Qetqa71q7dikJc5fSRXNx4uEQp" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1QtUZlbp8XKJ2vlIqrQ4lfnZGgf" />
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -45,9 +40,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Test">
-    <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GUI" />
+  <component name="RunManager" selected="Application.REPL">
+    <configuration name="REPL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="REPL" />
       <module name="Calculator_EJY" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -62,8 +57,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.REPL" />
         <item itemvalue="Application.Test" />
-        <item itemvalue="Application.GUI" />
       </list>
     </recent_temporary>
   </component>
@@ -72,19 +67,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f294400f-2134-4bd4-bc4c-b72c66f2e453" name="Default Changelist" comment="" />
-      <created>1568143080946</created>
+      <changelist id="8ffd7b05-7937-4e14-9787-3ef4dfbbf5e7" name="Default Changelist" comment="" />
+      <created>1568589443148</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1568143080946</updated>
+      <updated>1568589443148</updated>
     </task>
-    <task id="LOCAL−00001" summary="calculator stuff">
-      <created>1568323780348</created>
-      <option name="number" value="LOCAL−00001" />
-      <option name="presentableId" value="LOCAL−00001" />
-      <updated>1568323780348</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -92,14 +80,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="VcsManagerConfiguration">
     <MESSAGE value="calculator stuff" />
     <option name="LAST_COMMIT_MESSAGE" value="calculator stuff" />
@@ -111,4 +98,6 @@
       </configuration>
     </watches-manager>
   </component>
+=======
+>>>>>>> 53b1f1a6d2267f87d0082e27610a114187f7739f
 </project>
