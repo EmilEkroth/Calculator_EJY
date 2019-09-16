@@ -18,7 +18,7 @@ import static java.net.HttpURLConnection.HTTP_OK;
 
 /*
 
-        A Web server for the Calculator
+        A Web server for the calc.Calculator
 
         A Server to be able to do calculation on the Web
         Start this and visit localhost:8080
@@ -58,7 +58,7 @@ public class WebCalcServer {
                 // This is "Expression=1+2 ..."
                 String expr = args.split("=")[1];
                 expr = URLDecoder.decode(expr, "UTF-8");
-                double result = calc.eval(expr);
+                double result = calc.Calc(expr);
                 out.println(expr + " = " + result);
                 sendResponse(exchange, getPage(result));
             } else {

@@ -14,7 +14,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 /*
-     A graphical user interface for the Calculator
+     A graphical user interface for the calc.Calculator
 
      NOTE: It's also possible to ude FXML markup to define the GUI
 
@@ -37,7 +37,7 @@ public class GUI extends Application {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.centerOnScreen();
-        stage.setTitle("Calculator");
+        stage.setTitle("calc.Calculator");
         stage.setResizable(false);
         stage.show();
     }
