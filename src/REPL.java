@@ -16,7 +16,7 @@ public class REPL {
         while (!in.equals("exit"))
         {
             System.out.print("Write expression >");
-            in = sc.next();
+            in = sc.nextLine();
             System.out.println(in + " = " + calc.Calc(in));
         }
     }

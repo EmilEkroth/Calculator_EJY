@@ -3,8 +3,7 @@ import java.util.*;
 
 import static java.lang.Double.NaN;
 import static java.lang.Double.doubleToLongBits;
-import static java.lang.Math.pow;
-import static java.lang.Math.toIntExact;
+import static java.lang.Math.*;
 
 public class Calculator {
 
@@ -44,10 +43,13 @@ public class Calculator {
         Stack<Double> stack = new Stack<Double>();
         for(int i = 0; i < postfix.size(); i++)
         {
-            try {
+            if(isNumber(postfix.get(i))) {
                 double nmb = Double.parseDouble(postfix.get(i));
                 stack.add(nmb);
-            } catch(Exception e)
+            }else if(postfix.get(i).equals("ln")){
+                double a = stack.pop();
+                stack.push(log(a));
+            } else
             {
                 double a = stack.pop();
                 double b = stack.pop();
@@ -86,10 +88,9 @@ public class Calculator {
         ArrayList<String> postfix = new ArrayList<String>();
         for (int i = 0; i < tokens.size(); i++)
         {
-            try {
-                int test = Integer.parseInt(tokens.get(i));
+            if(isNumber(tokens.get(i))) {
                 postfix.add(tokens.get(i));
-            } catch(Exception e)
+            } else
             {
                 //System.out.println("debug: " + tokens.get(i));
 
@@ -125,6 +126,8 @@ public class Calculator {
             return 3;
         } else if ("^".contains(op)) {
             return 4;
+        } else if ("ln".contains(op)){
+            return 5;
         } else {
             throw new RuntimeException(OP_NOT_FOUND + " : [" + op + "]");
         }
@@ -154,30 +157,44 @@ public class Calculator {
         String[] in = expr.split("");
         for (int i = 0; i < in.length; i++)
         {
-            if(!Character.isWhitespace(in[i].charAt(0)))
-            {
-                try {
-                    int test = Integer.parseInt(in[i]);
+            if(!in[i].equals(" "))
+                {
+                if(isNumber(in[i]))
+                {
                     String c = in[i];
                     int n = i + 1;
                     while (true) {
-                        try {
-                            int test2 = Integer.parseInt(in[n]);
+                        if(isNumber(in[n])) {
+
                             c += in[n];
                             n++;
-                        } catch (Exception e) {
+                        } else {
                             break;
                         }
                     }
                     i = n-1;
                     list.add(c);
-                } catch (Exception e)
+                } else if (in[i].equals("l")){
+                    list.add("ln");
+                    i++;
+                }else
                 {
                     list.add(in[i]);
                 }
             }
         }
         return list;
+    }
+
+    boolean isNumber (String string)
+    {
+        boolean r = false;
+        try {
+             Double.parseDouble(string);
+             r = true;
+        } catch (NumberFormatException nfe){}
+
+        return r;
     }
 
     // TODO Possibly more methods
