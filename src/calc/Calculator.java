@@ -163,8 +163,15 @@ public class Calculator {
                         strList.add(strAsNumber);
                         strAsNumber = "";
                     }
-                    // adds the operator or parenthesis
-                    strList.add(token);
+
+                    if (token.equals("l")) {
+                        // adds the ln function
+                        strList.add("ln");
+                        i++;
+                    } else{
+                        // adds the operator or parenthesis
+                        strList.add(token);
+                    }
                 }
             } else{
                 // preventing space between two digits messing up
@@ -180,7 +187,6 @@ public class Calculator {
         return strList;
     }
 
-
     boolean isEmpty(String str) {
         return str.trim().length() == 0;
     }
@@ -194,8 +200,7 @@ public class Calculator {
         return true;
     }
 
-    /*
-    * this function somehow crashes webCalcServer, idk how
+/*
     public List<String> tokenize(String expr) {
         //break string up into tokens: number, operand or parenthesis
         List<String> list = new ArrayList<String>();
@@ -236,7 +241,6 @@ public class Calculator {
 
         return r;
     }
-    */
-
+*/
     // TODO Possibly more methods
 }
