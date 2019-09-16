@@ -173,9 +173,10 @@ public class Calculator {
                         strList.add(token);
                     }
                 }
-            } else{
+            } else if (!isEmpty(strAsNumber)) {
                 // preventing space between two digits messing up
                 // ex. 4 5 + 3 = 48 ==> ["45", "+", "3"] instead of ["4", "5", "+", "3"]
+                strList.add(strAsNumber);
                 strAsNumber = "";
             }
 

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ffd7f2c4-fa5b-4b46-a4d9-712c62e24176" name="Default" comment="updated the tokenize() to save digits separated by only spaces separately, ex. input(4 5) ==&gt; [&quot;4&quot;, &quot;5&quot;] instead of [&quot;5&quot;] or [&quot;45&quot;]">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/calc/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calc/Calculator.java" afterDir="false" />
-    </list>
+    <list default="true" id="ffd7f2c4-fa5b-4b46-a4d9-712c62e24176" name="Default" comment="didn't see the ln function, fixed it now" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +31,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="C:/college_stuff/calculator" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -237,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568665928828</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="didn't see the ln function, fixed it now">
+      <created>1568668101904</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568668101904</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -256,7 +260,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="webCalcServer should work now, changed tokenize() method a bit since it crashes webCalcServer for whatever reason" />
     <MESSAGE value="updated the tokenize() to save digits separated by only spaces separately, ex. input(4 5) ==&gt; [&quot;4&quot;, &quot;5&quot;] instead of [&quot;5&quot;] or [&quot;45&quot;]" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated the tokenize() to save digits separated by only spaces separately, ex. input(4 5) ==&gt; [&quot;4&quot;, &quot;5&quot;] instead of [&quot;5&quot;] or [&quot;45&quot;]" />
+    <MESSAGE value="didn't see the ln function, fixed it now" />
+    <option name="LAST_COMMIT_MESSAGE" value="didn't see the ln function, fixed it now" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
