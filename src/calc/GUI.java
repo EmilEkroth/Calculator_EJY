@@ -79,7 +79,7 @@ public class GUI extends Application {
         String text = ((Button) evt.getSource()).getText();
         switch (text) {
             case "=":
-                double d = calculator.eval(t.getText());
+                double d = calculator.Calc(t.getText());
                 t.setText(String.valueOf(d));
                 break;
             case "C":

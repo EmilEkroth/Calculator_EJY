@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ffd7f2c4-fa5b-4b46-a4d9-712c62e24176" name="Default" comment="">
+    <list default="true" id="ffd7f2c4-fa5b-4b46-a4d9-712c62e24176" name="Default" comment="webCalcServer should work now, changed tokenize() method a bit since it crashes webCalcServer for whatever reason">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Calculator_EJY.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator_EJY.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator_EJY/Calculator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator_EJY/GUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator_EJY/META-INF/Calculator_EJY.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator_EJY/REPL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator_EJY/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator_EJY/WebCalcServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calc/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/REPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calc/REPL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calc/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/calc/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calc/Calculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/calc/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calc/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/calc/WebCalcServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calc/WebCalcServer.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +59,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.WebCalcServer">
+  <component name="RunManager" selected="Application.REPL">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -216,10 +207,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WebCalcServer" />
         <item itemvalue="Application.REPL" />
-        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.WebCalcServer" />
         <item itemvalue="Application.GUI" />
+        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -234,6 +225,14 @@
       <option name="presentableId" value="Default" />
       <updated>1488451648277</updated>
     </task>
+    <task id="LOCAL-00001" summary="webCalcServer should work now, changed tokenize() method a bit since it crashes webCalcServer for whatever reason">
+      <created>1568664128231</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568664128231</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -248,6 +247,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="webCalcServer should work now, changed tokenize() method a bit since it crashes webCalcServer for whatever reason" />
+    <option name="LAST_COMMIT_MESSAGE" value="webCalcServer should work now, changed tokenize() method a bit since it crashes webCalcServer for whatever reason" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

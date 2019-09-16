@@ -166,6 +166,10 @@ public class Calculator {
                     // adds the operator or parenthesis
                     strList.add(token);
                 }
+            } else{
+                // preventing space between two digits messing up
+                // ex. 4 5 + 3 = 48 ==> ["45", "+", "3"] instead of ["4", "5", "+", "3"]
+                strAsNumber = "";
             }
 
             // finishing up by adding the number at the end of expression to the list
