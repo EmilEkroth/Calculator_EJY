@@ -43,7 +43,7 @@ public class Calculator {
     public double evalPostfix(List<String> postfix) {
         Stack<Double> stack = new Stack<Double>();
         for(int i = 0; i < postfix.size(); i++){
-            if(isInteger(postfix.get(i))) {
+            if(isNumber(postfix.get(i))) {
                 double nmb = Double.parseDouble(postfix.get(i));
                 stack.add(nmb);
             } else if (postfix.get(i).equals("ln")) {
@@ -87,7 +87,7 @@ public class Calculator {
         ArrayList<String> postfix = new ArrayList<String>();
 
         for (int i = 0; i < tokens.size(); i++) {
-            if(isInteger(tokens.get(i))) {
+            if(isNumber(tokens.get(i))) {
                 postfix.add(tokens.get(i));
             } else{
                 //System.out.println("debug: " + tokens.get(i));
@@ -154,7 +154,11 @@ public class Calculator {
             String token = Character.toString(expr.charAt(i));
 
             if (!isEmpty(token)) {
-                if (isInteger(token)) {
+                if((strList.size() == 0 || !isNumber(strList.get(strList.size()-1))) && token.equals("-"))
+                {
+                    strAsNumber += token;
+                }
+                else if (isNumber(token) || token.equals(".")) {
                     // adds the digit to the number
                     strAsNumber += token;
                 } else{
@@ -185,6 +189,7 @@ public class Calculator {
                 strList.add(strAsNumber);
             }
         }
+
         return strList;
     }
 
@@ -192,7 +197,7 @@ public class Calculator {
         return str.trim().length() == 0;
     }
 
-    boolean isInteger(String str) { //TODO check if decimals exist
+    /*boolean isInteger(String str) { //TODO check if decimals exist
         try{
             int num = Integer.parseInt(str);
         } catch (NumberFormatException | NullPointerException nfe) {
@@ -200,7 +205,7 @@ public class Calculator {
         }
         return true;
     }
-
+*/
 /*
     public List<String> tokenize(String expr) {
         //break string up into tokens: number, operand or parenthesis
@@ -231,7 +236,7 @@ public class Calculator {
         }
         return list;
     }
-
+*/
     boolean isNumber (String string)
     {
         boolean r = false;
@@ -242,6 +247,4 @@ public class Calculator {
 
         return r;
     }
-*/
-    // TODO Possibly more methods
 }
