@@ -15,6 +15,7 @@ public class Calculator {
     final static String DIV_BY_ZERO = "Division with 0";
     final static String MISSING_OPERATOR = "Missing operator or parenthesis";
     final static String OP_NOT_FOUND = "Operator not found";
+    final static String LN_OF_NEG = "ln of negative number";
 
     // Definition of operators
     final static String OPERATORS = "+-*/^";
@@ -48,7 +49,9 @@ public class Calculator {
                 stack.add(nmb);
             } else if (postfix.get(i).equals("ln")) {
                 double a = stack.pop();
+                if (a < 0) throw new IllegalArgumentException(LN_OF_NEG);
                 stack.push(log(a));
+
             } else{
                 double a = stack.pop();
                 double b = stack.pop();
