@@ -154,21 +154,29 @@ public class Calculator {
             String token = Character.toString(expr.charAt(i));
 
             if (!isEmpty(token)) {
-                if((strList.size() == 0 || !isNumber(strList.get(strList.size()-1))) && token.equals("-"))
-                {
-                    strAsNumber += token;
-                }
-                else if (isNumber(token) || token.equals(".")) {
+
+                if (isNumber(token) || token.equals(".")) {
                     // adds the digit to the number
                     strAsNumber += token;
-                } else{
+                }
+                else{
                     if (!isEmpty(strAsNumber)) {
                         // adds the number to the list and resets
                         strList.add(strAsNumber);
                         strAsNumber = "";
                     }
-
-                    if (token.equals("l")) {
+                    if((strList.size() == 0 || !isNumber(strList.get(strList.size()-1))) && token.equals("-"))
+                    {
+                        strList.add("-1");
+                        strList.add("*");
+                    }
+                    else if (token.equals("(") && strList.size() != 0 && (isNumber(strList.get(strList.size()-1)) || strList.get(strList.size()-1).equals(")")))
+                    { //Parenthesis as multiplication
+                        System.out.println("debug");
+                        strList.add("*");
+                        strList.add(token);
+                    }
+                    else if (token.equals("l")) {
                         // adds the ln function
                         strList.add("ln");
                         i++;
