@@ -154,7 +154,6 @@ public class Calculator {
             String token = Character.toString(expr.charAt(i));
 
             if (!isEmpty(token)) {
-
                 if (isNumber(token) || token.equals(".")) {
                     // adds the digit to the number
                     strAsNumber += token;
@@ -165,18 +164,17 @@ public class Calculator {
                         strList.add(strAsNumber);
                         strAsNumber = "";
                     }
-                    if((strList.size() == 0 || !isNumber(strList.get(strList.size()-1))) && token.equals("-"))
-                    {
+
+                    if ((strList.size() == 0 || !isNumber(strList.get(strList.size()-1))) && token.equals("-")) {
+                        // handles the negative numbers
                         strList.add("-1");
                         strList.add("*");
-                    }
-                    else if (token.equals("(") && strList.size() != 0 && (isNumber(strList.get(strList.size()-1)) || strList.get(strList.size()-1).equals(")")))
-                    { //Parenthesis as multiplication
+                    } else if (token.equals("(") && strList.size() != 0 && (isNumber(strList.get(strList.size()-1)) || strList.get(strList.size()-1).equals(")"))) {
+                        // Parenthesis as multiplication
                         System.out.println("debug");
                         strList.add("*");
                         strList.add(token);
-                    }
-                    else if (token.equals("l")) {
+                    } else if (token.equals("l")) {
                         // adds the ln function
                         strList.add("ln");
                         i++;

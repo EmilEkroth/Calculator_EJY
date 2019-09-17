@@ -135,7 +135,7 @@ public class WebCalcServer {
             for (String s : head) {
                 sb.append(s);
             }
-            sb.append("</head>").append("<body>");
+            sb.append("</head>").append("<body style=\"color:white;\" background=\"https://media.tenor.com/images/0d15b034b3b9f551988513759fb0bf79/tenor.gif\">");
             for (String s : body) {
                 sb.append(s);
             }

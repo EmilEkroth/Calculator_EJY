@@ -24,6 +24,10 @@ public class GUI extends Application {
 
     final Calculator calculator = new Calculator();
 
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+
     @Override
     public void start(Stage stage) throws Exception {
 
@@ -89,4 +93,6 @@ public class GUI extends Application {
                 t.setText(t.getText() + text);
         }
     }
+
+
 }
