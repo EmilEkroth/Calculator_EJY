@@ -192,7 +192,7 @@ public class Calculator {
         return str.trim().length() == 0;
     }
 
-    boolean isInteger(String str) {
+    boolean isInteger(String str) { //TODO check if decimals exist
         try{
             int num = Integer.parseInt(str);
         } catch (NumberFormatException | NullPointerException nfe) {
