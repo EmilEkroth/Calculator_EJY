@@ -46,7 +46,7 @@ public class GUI extends Application {
         stage.show();
     }
 
-    Pane createButtons() { //TODO add ln
+    Pane createButtons() {
         GridPane p = new GridPane();
         String labels = "123+C" + "456-^" + "789*l" + "0()/=";
         int i = 0;
@@ -54,15 +54,11 @@ public class GUI extends Application {
             for (int c = 0; c < 5; c++) {
                 String s = String.valueOf(labels.charAt(i));
                 if("l".equals(s)) {s="ln";}
-                if (!" ".equals(s)) {
-                    Button b = new Button(s);
 
-                    b.setMaxWidth(Double.MAX_VALUE);
-                    b.setOnMouseReleased(this::buttonHandler);
-                    p.add(b, c, r);
-                } else {
-                    p.add(new Pane(), c, r);
-                }
+                Button b = new Button(s);
+                b.setMaxWidth(Double.MAX_VALUE);
+                b.setOnMouseReleased(this::buttonHandler);
+                p.add(b, c, r);
                 i++;
             }
         }
@@ -76,7 +72,7 @@ public class GUI extends Application {
         v.setPadding(new Insets(3));
         t = new TextField();
         t.setPrefColumnCount(12);
-        t.setFont(Font.font("Verdana", 16));
+        t.setFont(Font.font("comic sans", 16));
         v.getChildren().add(t);
         return v;
     }
