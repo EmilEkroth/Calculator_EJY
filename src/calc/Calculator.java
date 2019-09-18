@@ -168,7 +168,7 @@ public class Calculator {
                         strAsNumber = "";
                     }
 
-                    if ((strList.size() == 0 || !isNumber(strList.get(strList.size()-1))) && token.equals("-")) {
+                    if ((strList.size() == 0 || (!strList.get(strList.size()-1).equals(")") && !isNumber(strList.get(strList.size()-1)))) && token.equals("-")) {
                         // handles the negative numbers
                         strList.add("-1");
                         strList.add("*");

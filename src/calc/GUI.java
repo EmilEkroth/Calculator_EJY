@@ -48,13 +48,15 @@ public class GUI extends Application {
 
     Pane createButtons() { //TODO add ln
         GridPane p = new GridPane();
-        String labels = "123+C" + "456-^" + "789* " + "0()/=";
+        String labels = "123+C" + "456-^" + "789*l" + "0()/=";
         int i = 0;
         for (int r = 0; r < 4; r++) {
             for (int c = 0; c < 5; c++) {
                 String s = String.valueOf(labels.charAt(i));
+                if("l".equals(s)) {s="ln";}
                 if (!" ".equals(s)) {
                     Button b = new Button(s);
+
                     b.setMaxWidth(Double.MAX_VALUE);
                     b.setOnMouseReleased(this::buttonHandler);
                     p.add(b, c, r);
