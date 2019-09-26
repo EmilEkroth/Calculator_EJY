@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8ffd7b05-7937-4e14-9787-3ef4dfbbf5e7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator_EJY/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Calculator_EJY/Calculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator_EJY/REPL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Calculator_EJY/REPL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Calculator_EJY/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Calculator_EJY/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/REPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/REPL.java" afterDir="false" />
-    </list>
+    <list default="true" id="8ffd7b05-7937-4e14-9787-3ef4dfbbf5e7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +67,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
