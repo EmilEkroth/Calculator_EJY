@@ -105,7 +105,8 @@ public class Calculator {
                     }
                     stack.pop();
                 } else{
-                    while (stack.size() != 0 && !stack.peek().equals("(") &&  getPrecedence(stack.peek()) >= getPrecedence(tokens.get(i))) {
+                    while (stack.size() != 0 && !stack.peek().equals("(") &&  getPrecedence(stack.peek()) >= getPrecedence(tokens.get(i))
+                    && !(getPrecedence(stack.peek()) == getPrecedence(tokens.get(i)) && getAssociativity(stack.peek()) == Assoc.RIGHT)) {
                         //check if procedure in stack has higher value than current procedure
                         postfix.add(stack.pop());
                     }
@@ -130,7 +131,7 @@ public class Calculator {
             throw new RuntimeException(OP_NOT_FOUND + " : [" + op + "]");
         }
     }
-    /*
+
     Assoc getAssociativity(String op) {
         if ("+-/*".contains(op)) {
             return Assoc.LEFT;
@@ -145,7 +146,7 @@ public class Calculator {
         LEFT,
         RIGHT
     }
-*/
+
     // ---------- Tokenize -----------------------
 
     public List<String> tokenize(String expr) {
@@ -206,46 +207,6 @@ public class Calculator {
         return str.trim().length() == 0;
     }
 
-    /*boolean isInteger(String str) { //TODO check if decimals exist
-        try{
-            int num = Integer.parseInt(str);
-        } catch (NumberFormatException | NullPointerException nfe) {
-            return false;
-        }
-        return true;
-    }
-*/
-/*
-    public List<String> tokenize(String expr) {
-        //break string up into tokens: number, operand or parenthesis
-        List<String> list = new ArrayList<String>();
-        String[] in = expr.split("");
-        for (int i = 0; i < in.length; i++) {
-            if(!in[i].equals(" ")) {
-                if(isInteger(in[i])) {
-                    String c = in[i];
-                    int n = i + 1;
-                    while (true) {
-                        if(isInteger(in[n])) {
-                            c += in[n];
-                            n++;
-                        } else {
-                            break;
-                        }
-                    }
-                    i = n-1;
-                    list.add(c);
-                } else if (in[i].equals("l")) {
-                    list.add("ln");
-                    i++;
-                } else {
-                    list.add(in[i]);
-                }
-            }
-        }
-        return list;
-    }
-*/
     boolean isNumber (String string)
     {
         boolean r = false;
