@@ -1,8 +1,5 @@
-import javafx.application.Application;
-import javafx.stage.Stage;
+package calc;
 
-import java.awt.*;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

@@ -1,3 +1,5 @@
+package calc;
+
 import java.util.Scanner;
 
 public class REPL {
@@ -15,7 +17,7 @@ public class REPL {
 
         while (!in.equals("exit"))
         {
-            System.out.print("Write expression >");
+            System.out.print("Write expression > ");
             in = sc.nextLine();
             System.out.println(in + " = " + calc.Calc(in));
         }
